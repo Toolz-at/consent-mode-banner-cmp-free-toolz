@@ -10,15 +10,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-
-Easily make your WordPress site compliant with privacy laws (GDPR, LGPD, CCPA) by injecting the Toolz CMP consent banner in your footer. No public links, no branding, no tracking, and 100% privacy-first.
+Easily make your WordPress site compliant with privacy laws (GDPR, LGPD, CCPA) by enabling the Toolz CMP consent banner in your footer. No public links, no branding, no tracking, and 100% privacy-first.
 
 **How it works:**
 - The admin generates a Banner ID at: https://consentmode.toolz.at/en/generator
-- The plugin only injects the banner if enabled and a valid ID is provided.
+- The plugin only enables the banner if you activate it and provide a valid ID.
 - No data is collected, no external branding, and no public links are added.
 
-Injeta o script do banner CMP da Toolz no rodapé com um ID único, apenas quando ativado e configurado pelo administrador. Não adiciona links públicos, branding ou rastreamento. Ideal para consentimento, privacidade e compliance.
+Ativa o banner CMP da Toolz no rodapé com um ID único, apenas quando ativado e configurado pelo administrador. Não adiciona links públicos, branding ou rastreamento. Ideal para consentimento, privacidade e compliance.
 
 == Installation ==
 
@@ -30,8 +29,8 @@ Injeta o script do banner CMP da Toolz no rodapé com um ID único, apenas quand
 
 == Frequently Asked Questions ==
 
-= Does it inject anything without an ID? =
-No. The script is only injected if you enable the banner and provide a valid Banner ID.
+= Does the plugin enable anything without a Banner ID? =
+No. The script is only enabled if you activate the banner and provide a valid Banner ID.
 
 = Where do I get my Banner ID? =
 Go to https://consentmode.toolz.at/en/generator and generate your free Banner ID.
@@ -40,10 +39,19 @@ Go to https://consentmode.toolz.at/en/generator and generate your free Banner ID
 No. The script URL is always https://cdn.toolz.at/banner-cmp.js and your ID is set in the data-toolz-banner-id attribute.
 
 = Is it compatible with cache/CDN? =
-Yes. The script is only injected when enabled and does not send data by itself.
+Yes. The script is only enabled when you activate the banner and does not send data by itself.
 
 = Is there any branding or tracking? =
 No. The plugin is 100% white-label and privacy-first.
+
+= Is this plugin free? =
+Yes. It is free and open source (GPLv2 or later).
+
+= Does it work with any theme? =
+Yes, as long as your theme supports the standard `wp_footer` hook.
+
+= Can I use it for LGPD/GDPR/CCPA compliance? =
+Yes, the banner is designed for privacy and consent compliance in multiple jurisdictions.
 
 == Screenshots ==
 1. Settings page for Consent Mode Banner CMP (Free) - Toolz.
@@ -54,4 +62,4 @@ No. The plugin is 100% white-label and privacy-first.
 * Initial release.
 
 == Privacy ==
-This plugin only injects an external script when enabled and configured. No data is collected or tracked by this plugin. Privacy policy and user communication are the responsibility of the site administrator.
+This plugin only enables an external script when activated and configured. No data is collected or tracked by this plugin. Privacy policy and user communication are the responsibility of the site administrator.
