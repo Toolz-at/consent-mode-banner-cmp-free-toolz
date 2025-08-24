@@ -85,4 +85,3 @@ GPLv2 or later. See LICENSE file.
 ---
 
 **Keywords:** WordPress consent banner, cookie compliance, CMP, Toolz, LGPD/GDPR ready, footer injection, data attribute id
-# toolz-banner-cmp
