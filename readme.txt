@@ -1,12 +1,14 @@
 === Consent Mode Banner CMP (Free) - Toolz ===
 Contributors: joandysson
-Tags: footer, script, id, tracking, consent, cmp, banner, cookie, compliance, privacy, analytics, integration, injection
+Tags: consent mode, cmp, banner, cookie, compliance
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Easily display the Toolz CMP banner in your site footer using a unique ID. GDPR, LGPD & CCPA ready cookie consent solution.
 
 == Description ==
 

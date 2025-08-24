@@ -135,7 +135,7 @@ class Toolz_Banner_CMP_Plugin {
         if ( 'sif-banner' === $handle ) {
             $banner_id = (string) get_option( SIF_OPTION_KEY, '' );
             if ( preg_match( '/^[A-Za-z0-9_-]{3,64}$/', $banner_id ) ) {
-                $tag = '<script src="' . esc_url( $src ) . '" data-toolz-banner-id="' . esc_attr( $banner_id ) . '"></script>';
+                $tag = str_replace( '<script ', '<script data-toolz-banner-id="' . esc_attr( $banner_id ) . '" ', $tag );
             }
         }
         return $tag;
