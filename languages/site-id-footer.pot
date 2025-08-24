@@ -10,38 +10,38 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: toolz-banner-cmp.php:38
+#: consent-mode-banner-cmp-free-toolz.php:38
 msgid "Site ID Footer"
 msgstr ""
 
-#: toolz-banner-cmp.php:61
+#: consent-mode-banner-cmp-free-toolz.php:61
 msgid "Banner CMP Settings"
 msgstr ""
 
-#: toolz-banner-cmp.php:68
+#: consent-mode-banner-cmp-free-toolz.php:68
 msgid "Enable footer injection"
 msgstr ""
 
-#: toolz-banner-cmp.php:73
+#: consent-mode-banner-cmp-free-toolz.php:73
 msgid "Banner ID"
 msgstr ""
 
-#: toolz-banner-cmp.php:87
+#: consent-mode-banner-cmp-free-toolz.php:87
 msgid "Activate script injection in the footer"
 msgstr ""
 
-#: toolz-banner-cmp.php:92
+#: consent-mode-banner-cmp-free-toolz.php:92
 msgid "Enter your Toolz Banner ID"
 msgstr ""
 
-#: toolz-banner-cmp.php:112
+#: consent-mode-banner-cmp-free-toolz.php:112
 msgid "Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore."
 msgstr ""
 
-#: toolz-banner-cmp.php:137
+#: consent-mode-banner-cmp-free-toolz.php:137
 msgid "Settings"
 msgstr ""
 
-#: toolz-banner-cmp.php:144
+#: consent-mode-banner-cmp-free-toolz.php:144
 msgid "Site ID Footer: Script injection is enabled, but the Banner ID is missing or invalid."
 msgstr ""

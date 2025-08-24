@@ -5,15 +5,15 @@
 ## How to Install the Plugin
 
 ### Option 1: Install via WordPress Dashboard
-1. Download the plugin from [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (click "Code > Download ZIP").
+1. Download the plugin from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-free-toolz) (click "Code > Download ZIP").
 2. In your WordPress dashboard, go to **Plugins > Add New**.
 3. Click **Upload Plugin** and select the downloaded ZIP file.
 4. Click **Install Now** and then **Activate**.
 
 ### Option 2: Manual Installation (FTP)
-1. Download the plugin from [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (click "Code > Download ZIP").
+1. Download the plugin from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-free-toolz) (click "Code > Download ZIP").
 2. Extract the ZIP file on your computer.
-3. Upload the `toolz-banner-cmp` folder to your site's `/wp-content/plugins/` directory via FTP.
+3. Upload the `consent-mode-banner-cmp-free-toolz` folder to your site's `/wp-content/plugins/` directory via FTP.
 4. In your WordPress dashboard, go to **Plugins** and activate "Consent Mode Banner CMP (Free) - Toolz".
 
 ---

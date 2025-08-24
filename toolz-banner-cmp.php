@@ -6,7 +6,7 @@
  * Author: Toolz
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: toolz-banner-cmp
+ * Text Domain: consent-mode-banner-cmp-free-toolz
  * Domain Path: /languages
  * Requires at least: 5.0
  * Tested up to: 6.8
@@ -32,10 +32,10 @@ class Toolz_Banner_CMP_Plugin {
 
     public function add_settings_page() {
         add_options_page(
-            __( 'Consent Mode Banner CMP (Free) - Toolz', 'toolz-banner-cmp' ),
-            __( 'Consent Mode Banner CMP (Free) - Toolz', 'toolz-banner-cmp' ),
+            __( 'Consent Mode Banner CMP (Free) - Toolz', 'consent-mode-banner-cmp-free-toolz' ),
+            __( 'Consent Mode Banner CMP (Free) - Toolz', 'consent-mode-banner-cmp-free-toolz' ),
             'manage_options',
-            'toolz-banner-cmp',
+            'consent-mode-banner-cmp-free-toolz',
             [ $this, 'settings_page_html' ]
         );
     }
@@ -55,24 +55,24 @@ class Toolz_Banner_CMP_Plugin {
 
         add_settings_section(
             'sif_section',
-            __( 'Banner CMP Settings', 'toolz-banner-cmp' ),
+            __( 'Banner CMP Settings', 'consent-mode-banner-cmp-free-toolz' ),
             '__return_false',
-            'toolz-banner-cmp'
+            'consent-mode-banner-cmp-free-toolz'
         );
 
         add_settings_field(
             SIF_ENABLE_KEY,
-            __( 'Enable Banner', 'toolz-banner-cmp' ),
+            __( 'Enable Banner', 'consent-mode-banner-cmp-free-toolz' ),
             [ $this, 'field_enable' ],
-            'toolz-banner-cmp',
+            'consent-mode-banner-cmp-free-toolz',
             'sif_section'
         );
 
         add_settings_field(
             SIF_OPTION_KEY,
-            __( 'Banner ID', 'toolz-banner-cmp' ) . ' <span style="color:red">*</span>',
+            __( 'Banner ID', 'consent-mode-banner-cmp-free-toolz' ) . ' <span style="color:red">*</span>',
             [ $this, 'field_id' ],
-            'toolz-banner-cmp',
+            'consent-mode-banner-cmp-free-toolz',
             'sif_section'
         );
     }
@@ -88,14 +88,14 @@ class Toolz_Banner_CMP_Plugin {
             return $value;
         }
         $old = get_option( SIF_OPTION_KEY, '' );
-        add_settings_error( SIF_OPTION_KEY, 'invalid_id', __( 'Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore.', 'toolz-banner-cmp' ) );
+        add_settings_error( SIF_OPTION_KEY, 'invalid_id', __( 'Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore.', 'consent-mode-banner-cmp-free-toolz' ) );
         return $old;
     }
 
     public function field_enable() {
         $value = (int) get_option( SIF_ENABLE_KEY, 0 );
         echo '<label><input type="checkbox" id="' . esc_attr( SIF_ENABLE_KEY ) . '" name="' . esc_attr( SIF_ENABLE_KEY ) . '" value="1" ' . checked( 1, $value, false ) . ' /> ';
-        echo esc_html__( 'After enabling the banner it will start to be displayed', 'toolz-banner-cmp' ) . '</label>';
+        echo esc_html__( 'After enabling the banner it will start to be displayed', 'consent-mode-banner-cmp-free-toolz' ) . '</label>';
     }
 
     public function field_id() {
@@ -104,7 +104,7 @@ class Toolz_Banner_CMP_Plugin {
         echo '<br /><small>';
         printf(
             /* translators: %s: Toolz Banner CMP site URL */
-            esc_html__( 'Get your Banner ID at %s', 'toolz-banner-cmp' ),
+            esc_html__( 'Get your Banner ID at %s', 'consent-mode-banner-cmp-free-toolz' ),
             '<a href="https://consentmode.toolz.at/en/generator" target="_blank" rel="noopener noreferrer">Consent Mode</a>'
         );
         echo '</small>';
@@ -113,10 +113,10 @@ class Toolz_Banner_CMP_Plugin {
     public function settings_page_html() {
         if ( ! current_user_can( 'manage_options' ) ) return;
         echo '<div class="wrap">';
-        echo '<h1>' . esc_html__( 'Consent (Toolz Banner CMP)', 'toolz-banner-cmp' ) . '</h1>';
+        echo '<h1>' . esc_html__( 'Consent (Toolz Banner CMP)', 'consent-mode-banner-cmp-free-toolz' ) . '</h1>';
         echo '<form method="post" action="options.php">';
         settings_fields( 'sif_settings' );
-        do_settings_sections( 'toolz-banner-cmp' );
+        do_settings_sections( 'consent-mode-banner-cmp-free-toolz' );
         submit_button();
         echo '</form>';
         echo '</div>';
@@ -142,8 +142,8 @@ class Toolz_Banner_CMP_Plugin {
     }
 
     public function settings_link( $links ) {
-        $url = admin_url( 'options-general.php?page=toolz-banner-cmp' );
-        $links[] = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'toolz-banner-cmp' ) . '</a>';
+        $url = admin_url( 'options-general.php?page=consent-mode-banner-cmp-free-toolz' );
+        $links[] = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
         return $links;
     }
 
@@ -153,7 +153,7 @@ class Toolz_Banner_CMP_Plugin {
         $banner_id = (string) get_option( SIF_OPTION_KEY, '' );
 
         if ( $enabled && ! preg_match( '/^[A-Za-z0-9_-]{3,64}$/', $banner_id ) ) {
-            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Consent: Banner is enabled, but the Banner ID is missing or invalid.', 'toolz-banner-cmp' ) . '</p></div>';
+            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Consent: Banner is enabled, but the Banner ID is missing or invalid.', 'consent-mode-banner-cmp-free-toolz' ) . '</p></div>';
         }
     }
 }

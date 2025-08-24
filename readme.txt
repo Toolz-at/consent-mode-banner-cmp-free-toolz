@@ -2,7 +2,7 @@
 Contributors: joandysson
 Tags: footer, script, id, tracking, consent, cmp, banner, cookie, compliance, privacy, analytics, integration, injection
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -21,7 +21,7 @@ Ativa o banner CMP da Toolz no rodapé com um ID único, apenas quando ativado e
 
 == Installation ==
 
-1. Download the plugin from [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (Code > Download ZIP) or install via the WordPress plugins screen.
+1. Download the plugin from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-free-toolz) (Code > Download ZIP) or install via the WordPress plugins screen.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Go to Settings → Consent Mode Banner CMP (Free) - Toolz.
 4. Check "Enable Banner" and enter your Banner ID (get it at https://consentmode.toolz.at/en/generator).
