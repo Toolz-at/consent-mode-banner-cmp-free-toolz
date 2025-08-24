@@ -1,119 +1,99 @@
 
-# Consent Mode Banner CMP (Free) - Toolz
 
-[Gerador de Banner Toolz CMP](https://consentmode.toolz.at/en/generator) – Gere seu banner personalizado gratuitamente.
 
-## Como instalar o plugin
+# :globe_with_meridians: This README is available in other languages:
+- [English (main)](README.en.md)
+- [Português (BR)](README.pt-br.md)
 
-### Opção 1: Instalar pelo painel do WordPress
-1. Baixe o plugin pelo [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (clique em "Code > Download ZIP").
-2. No painel do WordPress, vá em **Plugins > Adicionar novo**.
-3. Clique em **Enviar plugin** e selecione o arquivo ZIP baixado.
-4. Clique em **Instalar agora** e depois em **Ativar**.
+# Consent Mode Banner CMP (Free) – Toolz
 
-### Opção 2: Instalar manualmente (FTP)
-1. Baixe o plugin pelo [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (clique em "Code > Download ZIP").
-2. Extraia o arquivo ZIP no seu computador.
-3. Envie a pasta `toolz-banner-cmp` para o diretório `/wp-content/plugins/` do seu site via FTP.
-4. No painel do WordPress, vá em **Plugins** e ative o "Consent Mode Banner CMP (Free) - Toolz".
+**The easiest way to make your WordPress site compliant with privacy laws (GDPR, LGPD, CCPA) and build user trust.**
 
 ---
 
-## Como configurar e ativar o banner
+## Why use this plugin?
 
-1. Gere seu Banner ID em: [https://consentmode.toolz.at/en/generator](https://consentmode.toolz.at/en/generator)
-2. No WordPress, acesse o menu **Configurações > Consent Mode Banner CMP (Free) - Toolz**.
-3. Marque a opção **Enable Banner** para ativar a exibição do banner.
-4. No campo **Banner ID**, cole o ID gerado no site da Toolz.
-5. Clique em **Salvar alterações**.
-6. Pronto! O banner será exibido no rodapé do seu site.
-
-> **Dica:** Se o ID for inválido ou o banner não aparecer, confira se o tema possui a função `wp_footer` e se o ID está correto.
-
-**WordPress CMP, Consent, Banner, Cookie, Privacy, Compliance, Toolz, Footer Script, Data Attribute**
+- **Instant compliance:** Add a professional consent banner in seconds, with no coding.
+- **No branding, no tracking:** 100% white-label, privacy-first, and no public links.
+- **Safe by default:** Only injects the banner if enabled and configured by the admin.
+- **Works with any theme:** As long as your theme supports `wp_footer`.
+- **Free and open source:** No hidden costs, no data collection, GPLv2 or later.
 
 ---
 
-**Version:** 1.0.0
-**License:** GPLv2 or later
-**Author:** joandysson
+## Quick Start (2 minutes)
+
+1. **[Generate your Banner ID](https://consentmode.toolz.at/en/generator)** (free, no registration).
+2. **Install the plugin:**
+	 - Download from [GitHub](https://github.com/Toolz-at/toolz-banner-cmp) (Code > Download ZIP).
+	 - In WordPress, go to **Plugins > Add New > Upload Plugin** and select the ZIP.
+	 - Click **Install Now** and **Activate**.
+3. **Configure:**
+	 - Go to **Settings > Consent Mode Banner CMP (Free) - Toolz**.
+	 - Check **Enable Banner**.
+	 - Paste your Banner ID.
+	 - Save changes.
+4. **Done!** Your site is now showing a compliant, privacy-friendly consent banner.
 
 ---
-
-## Overview
-
-Consent Mode Banner CMP (Free) - Toolz is a lightweight WordPress plugin for cookie compliance and privacy. It injects the [Toolz CMP banner script](https://cdn.toolz.at/banner-cmp.js) in the footer using a unique site ID, only when enabled by the admin. No public links, no branding, no tracking—just safe, opt-in integration for consent mode, LGPD/GDPR, and privacy compliance.
-
-## Recursos (PT-BR)
-
-- Injeta o script CMP da Toolz no rodapé do WordPress
-- Só ativa se o admin marcar e informar o ID
-- Sem links públicos, sem branding
-- Ideal para consentimento, LGPD/GDPR, privacidade e compliance
 
 ## Features
 
-- **Safe by default (opt-in)**
-- **No public links**
-- **Script attribute `data-toolz-banner-id`**
+- Single Banner ID per site
+- No public links, no branding, no tracking
+- Script injected only if enabled and valid
+- Attribute: `data-toolz-banner-id`
+- Compatible: WordPress 5.0–6.6, PHP 7.4–8.x
+
+---
 
 ## How it works
 
-4. O plugin injeta:
+When enabled, the plugin injects the following in your site's footer:
 
 ```html
-<script src="https://cdn.toolz.at/banner-cmp.js" data-toolz-banner-id="SEU_ID"></script>
+<script src="https://cdn.toolz.at/banner-cmp.js" data-toolz-banner-id="YOUR_ID"></script>
 ```
 
-no rodapé do site, apenas se ativado e com ID válido.
+---
 
-## Compatibility
+## FAQ
 
-- WordPress 5.0–6.6
-- PHP 7.4–8.x
+- **What if my theme doesn't show the banner?**
+	Make sure your theme uses the standard `wp_footer` hook.
+- **What if I enter an invalid ID?**
+	The script will not be injected.
+- **Is it really privacy-first?**
+	Yes! No tracking, no data collection, no external branding.
 
-## Installation
-
-1. Upload the plugin files to `/wp-content/plugins/toolz-banner-cmp` or install via WordPress admin.
-
-## Download & Installation
-
-Você pode baixar o plugin diretamente pelo [repositório oficial no GitHub](https://github.com/Toolz-at/toolz-banner-cmp) ou gerar o arquivo ZIP pelo menu "Code > Download ZIP".
-
-**Para instalar no WordPress:**
-
-1. No painel do WordPress, vá em "Plugins > Adicionar novo".
-2. Clique em "Enviar plugin" e selecione o arquivo ZIP do plugin.
-3. Instale e ative normalmente.
-
-Ou, se preferir:
-
-1. Faça upload dos arquivos para `/wp-content/plugins/toolz-banner-cmp` via FTP.
-2. Ative o plugin no painel do WordPress.
-
-Veja a página de configuração (print):
-
-- ![Settings page screenshot](assets/banner-1544x500.png)
-- ![Plugin icon](assets/icon-128x128.png)
-
-## FAQ & Troubleshooting
-
-- **ID inválido:** O script não será injetado.
-- **Tema sem `wp_footer`:** O script pode não aparecer. Use temas compatíveis.
+---
 
 ## Security & Compliance
 
-- Sem eval, sem powered-by, sem links públicos
-- Segue GPLv2 or later
-- Não coleta dados, não rastreia
+- No eval, no powered-by, no public links
+- GPLv2 or later
+- Does not collect or track data
+
+---
+
+## Screenshots
+
+![Settings page screenshot](assets/banner-1544x500.png)
+![Plugin icon](assets/icon-128x128.png)
+
+---
 
 ## Contributing
 
 Pull requests welcome! See LICENSE for details.
 
+---
+
 ## License
 
 GPLv2 or later. See LICENSE file.
+
+---
 
 ## Changelog
 
