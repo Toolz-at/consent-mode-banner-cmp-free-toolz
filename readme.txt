@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Injects the Toolz CMP banner script in the footer with a unique Banner ID, only when enabled and configured by the admin. No public links or branding are added. Typical use: display and control the Toolz CMP banner for consent/privacy compliance using a unique ID.
 
-Injeta o script do banner CMP da Toolz no rodapé com um ID único, apenas quando ativado e configurado pelo administrador. Não adiciona links públicos ou branding. Uso típico: exibir/comandar o banner CMP da Toolz para consentimento/privacidade/compliance usando um ID único.
+Injeta o script do banner CMP da Toolz no rodapé com um ID único para o banner, apenas quando ativado e configurado pelo administrador. Não adiciona links públicos ou branding. Uso típico: exibir/comandar o banner CMP da Toolz para consentimento/privacidade/compliance usando um ID único.
 
 == Installation ==
 
