@@ -55,6 +55,23 @@ Yes, as long as your theme supports the standard `wp_footer` hook.
 = Can I use it for LGPD/GDPR/CCPA compliance? =
 Yes, the banner is designed for privacy and consent compliance in multiple jurisdictions.
 
+== External services ==
+
+This plugin uses an external service (Toolz Consent Mode) to display and manage the cookie/consent banner.
+
+Why: The script is loaded from Toolz’s servers to simplify the setup process directly from WordPress, so you don’t need to manually copy and configure code on your site.
+
+Alternative: If you prefer, you can generate and add the banner script manually using the official generator at: https://consentmode.toolz.at/en/generator
+
+What data is sent and when:
+- Every time a page is loaded, the browser requests the banner script and configuration from Toolz servers.
+- Only standard technical information is transmitted (such as IP address, browser type, and referer), which happens with any normal web request.
+- No personal data is collected by the plugin itself.
+
+Service provider: Toolz.at
+- [Terms of Service](https://consentmode.toolz.at/en/terms)
+- [Privacy Policy](https://consentmode.toolz.at/en/politics-privacy)
+
 == Screenshots ==
 1. Settings page for Consent Mode Banner CMP (Free) - Toolz.
 2. Example of the consent banner in the site footer.
