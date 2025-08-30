@@ -77,7 +77,7 @@ Service provider: Toolz.at
 2. Example of the consent banner in the site footer.
 
 == Changelog ==
-= 1.0.0 =
+= 1.0.1 =
 * Initial release.
 
 == Privacy ==
