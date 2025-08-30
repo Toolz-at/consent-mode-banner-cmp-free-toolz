@@ -97,8 +97,8 @@ GPLv2 or later. See LICENSE file.
 
 ## Changelog
 
-- 1.0.1 – Initial release
-
+- 1.0.1 – Bug fixes and minor improvements
+- 1.0.0 – Initial release
 ---
 
 **Keywords:** WordPress consent banner, cookie compliance, CMP, Toolz, LGPD/GDPR ready, footer injection, data attribute id

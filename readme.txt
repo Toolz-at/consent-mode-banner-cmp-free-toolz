@@ -78,6 +78,8 @@ Service provider: Toolz.at
 
 == Changelog ==
 = 1.0.1 =
+* Bug fixes and minor improvements.
+= 1.0.0 =
 * Initial release.
 
 == Privacy ==
