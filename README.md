@@ -5,7 +5,7 @@
 - [English (main)](README.en.md)
 - [Português (BR)](README.pt-br.md)
 
-# Consent Mode Banner CMP (Free) – Toolz
+# Consent Mode Banner CMP – Toolz
 
 **The easiest way to make your WordPress site compliant with privacy laws (GDPR, LGPD, CCPA) and build user trust.**
 
@@ -25,11 +25,11 @@
 
 1. **[Generate your Banner ID](https://consentmode.toolz.at/en/generator)** (free, no registration).
 2. **Install the plugin:**
-	 - Download from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-free-toolz) (Code > Download ZIP).
+	 - Download from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-toolz) (Code > Download ZIP).
 	 - In WordPress, go to **Plugins > Add New > Upload Plugin** and select the ZIP.
 	 - Click **Install Now** and **Activate**.
 3. **Configure:**
-	 - Go to **Settings > Consent Mode Banner CMP (Free) - Toolz**.
+	 - Go to **Settings > Consent Mode Banner CMP - Toolz**.
 	 - Check **Enable Banner**.
 	 - Paste your Banner ID.
 	 - Save changes.
