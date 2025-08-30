@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Consent Mode Banner CMP - Toolz
  * Description: Consent Mode Banner for GDPR, CCPA, LGPD with conditional cookie notice and customizable cookie policy.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Toolz
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'TOOLZCMPFT_VERSION', '1.0.1' );
+define( 'TOOLZCMPFT_VERSION', '1.0.2' );
 define( 'TOOLZCMPFT_OPTION_KEY', 'toolzcmpft_banner_id' );
 define( 'TOOLZCMPFT_ENABLE_KEY', 'toolzcmpft_banner_enable' );
 define( 'TOOLZCMPFT_SCRIPT_SRC', 'https://cdn.toolz.at/banner-cmp.js' );

@@ -4,7 +4,7 @@ Tags: consent mode, cmp, banner, cookie, compliance
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,8 @@ Service provider: Toolz.at
 2. Example of the consent banner in the site footer.
 
 == Changelog ==
+= 1.0.2 =
+* Minor text updates.
 = 1.0.1 =
 * Bug fixes and minor improvements.
 = 1.0.0 =

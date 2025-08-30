@@ -68,6 +68,7 @@ GPLv2 ou posterior. Veja o arquivo LICENSE.
 
 ## Changelog
 
+- 1.0.2 – Atualizações menores de texto
 - 1.0.1 – Correções de bugs e melhorias menores
 - 1.0.0 – Lançamento inicial
 
