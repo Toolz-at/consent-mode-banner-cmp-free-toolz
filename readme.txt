@@ -4,7 +4,7 @@ Tags: consent mode, cmp, banner, cookie, compliance
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Ativa o banner CMP da Toolz no rodapé com um ID único, apenas quando ativado e
 
 == Installation ==
 
-1. Download the plugin from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-toolz) (Code > Download ZIP) or install via the WordPress plugins screen.
+1. Download the plugin from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-free-toolz) (Code > Download ZIP) or install via the WordPress plugins screen.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Go to Settings → Consent Mode Banner CMP - Toolz.
 4. Check "Enable Banner" and enter your Banner ID (get it at https://consentmode.toolz.at/en/generator).
@@ -77,10 +77,15 @@ Service provider: Toolz.at
 2. Example of the consent banner in the site footer.
 
 == Changelog ==
+= 1.0.3 =
+* Atualização do repositório GitHub.
+
 = 1.0.2 =
 * Minor text updates.
+
 = 1.0.1 =
 * Bug fixes and minor improvements.
+
 = 1.0.0 =
 * Initial release.
 
