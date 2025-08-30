@@ -68,7 +68,7 @@ GPLv2 ou posterior. Veja o arquivo LICENSE.
 
 ## Changelog
 
-- 1.0.0 – Lançamento inicial
+- 1.0.1 – Lançamento inicial
 
 ---
 
