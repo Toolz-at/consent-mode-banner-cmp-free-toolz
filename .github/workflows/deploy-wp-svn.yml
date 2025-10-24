@@ -1,0 +1,116 @@
+# .github/workflows/deploy-wp-svn.yml
+# Workflow to deploy the plugin to WordPress.org SVN whenever a version tag is pushed
+name: Deploy to WordPress.org SVN
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Run only when pushing tags that resemble vMAJOR.MINOR.PATCH
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository # Ensure we have the full history for SVN deploys
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag # Strip the leading v and validate the tag format
+        id: vars
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Tag '$TAG' must follow the vMAJOR.MINOR.PATCH format."
+            exit 1
+          fi
+          VERSION="${TAG#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Detected version: $VERSION"
+
+      - name: Log compatibility metadata # Optional log to surface key plugin metadata
+        run: |
+          set -euo pipefail
+          echo "Requires at least: 5.0"
+          echo "Requires PHP: 7.4"
+          echo "Tested up to: 6.8"
+
+      - name: Validate Stable Tag in readme.txt # Block deploy if Stable Tag mismatches the tag version
+        env:
+          VERSION: ${{ steps.vars.outputs.version }}
+        run: |
+          set -euo pipefail
+          if [[ ! -f "readme.txt" ]]; then
+            echo "::error::File 'readme.txt' was not found in the repository root."
+            exit 1
+          fi
+          python - <<'PY'
+          import os, re, sys, pathlib
+          version = os.environ["VERSION"]
+          path = pathlib.Path("readme.txt")
+          text = path.read_text()
+          match = re.search(r'(?im)^Stable tag:\s*([0-9]+\.[0-9]+\.[0-9]+)\s*$', text)
+          if not match:
+              print("::error::Could not find a Stable tag line in readme.txt.", flush=True)
+              sys.exit(1)
+          found = match.group(1)
+          if found != version:
+              print(f"::error::Stable tag in readme.txt is '{found}', expected '{version}'.", flush=True)
+              sys.exit(1)
+          PY
+
+      - name: Validate plugin header version # Block deploy if plugin header Version is out of sync
+        env:
+          VERSION: ${{ steps.vars.outputs.version }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os, re, sys, pathlib
+          version = os.environ["VERSION"]
+          path = pathlib.Path("consent-mode-banner-cmp-toolz.php")
+          if not path.exists():
+              print("::error::Main plugin file 'consent-mode-banner-cmp-toolz.php' not found.", flush=True)
+              sys.exit(1)
+          text = path.read_text()
+          match = re.search(r'^\s*\*\s*Version:\s*([0-9]+\.[0-9]+\.[0-9]+)\s*$', text, re.MULTILINE)
+          if not match:
+              print("::error::Could not find a Version header in consent-mode-banner-cmp-toolz.php.", flush=True)
+              sys.exit(1)
+          found = match.group(1)
+          if found != version:
+              print(f"::error::Plugin header version is '{found}', expected '{version}'.", flush=True)
+              sys.exit(1)
+          PY
+
+      - name: Prepare WordPress.org assets # Copy assets/ into .wordpress-org/ when present
+        run: |
+          set -euo pipefail
+          if [[ -d "assets" ]]; then
+            rm -rf .wordpress-org
+            mkdir .wordpress-org
+            cp -R assets/. .wordpress-org/
+            echo "Copied assets/ to .wordpress-org/."
+          else
+            echo "No assets directory found; skipping asset preparation."
+          fi
+
+      - name: Deploy to WordPress.org SVN # Run the official deploy action with generated ZIP
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@v2
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: consent-mode-banner-cmp-free-toolz
+          VERSION: ${{ steps.vars.outputs.version }}
+        with:
+          generate-zip: true
+
+      - name: Upload release ZIP artifact # Publish the generated ZIP for reference/download
+        uses: actions/upload-artifact@v4
+        with:
+          name: consent-mode-banner-cmp-free-toolz-${{ steps.vars.outputs.version }}
+          path: ${{ steps.deploy.outputs.zip-path }}
+          if-no-files-found: error
