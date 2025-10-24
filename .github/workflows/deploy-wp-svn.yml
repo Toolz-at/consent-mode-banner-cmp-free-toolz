@@ -1,0 +1,101 @@
+ # Workflow to deploy the plugin to WordPress.org SVN when changes land on main
+  name: Deploy to WordPress.org SVN
+
+  on:
+    push:
+      branches:
+        - main # Only run deployments from the main branch
+
+  jobs:
+    deploy:
+      name: Build & Deploy
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout repository # Fetch repository contents for deployment
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+
+        - name: Extract plugin version # Read Version: from the plugin header and expose it as an output
+          id: vars
+          run: |
+            set -euo pipefail
+            python - <<'PY'
+            import pathlib, re, sys, os
+            path = pathlib.Path("consent-mode-banner-cmp-toolz.php")
+            if not path.exists():
+                print("::error::Main plugin file 'consent-mode-banner-cmp-toolz.php' not found.")
+                sys.exit(1)
+            text = path.read_text()
+            match = re.search(r'^\s*\*\s*Version:\s*([0-9]+\.[0-9]+\.[0-9]+)\s*$', text, re.MULTILINE)
+            if not match:
+                print("::error::Could not find a valid Version header (MAJOR.MINOR.PATCH) in consent-mode-banner-cmp-toolz.php.")
+                sys.exit(1)
+            version = match.group(1)
+            print(f"version={version}", file=open(os.environ["GITHUB_OUTPUT"], "a"))
+            print(f"Detected plugin version: {version}")
+            PY
+
+        - name: Validate plugin header version # Ensure the plugin header still matches the detected version
+          env:
+            VERSION: ${{ steps.vars.outputs.version }}
+          run: |
+            set -euo pipefail
+            if ! grep -Eq "^\s*\*\s*Version:\s*${VERSION}\s*$" consent-mode-banner-cmp-toolz.php; then
+              echo "::error::Plugin header Version does not match '${VERSION}'."
+              exit 1
+            fi
+
+        - name: Validate readme Stable Tag # Ensure readme.txt Stable Tag equals the plugin version
+          env:
+            VERSION: ${{ steps.vars.outputs.version }}
+          run: |
+            set -euo pipefail
+            if [[ ! -f "readme.txt" ]]; then
+              echo "::error::File 'readme.txt' not found in repository root."
+              exit 1
+            fi
+            python - <<'PY'
+            import os, re, sys, pathlib
+            version = os.environ["VERSION"]
+            text = pathlib.Path("readme.txt").read_text()
+            match = re.search(r'(?im)^Stable tag:\s*([0-9]+\.[0-9]+\.[0-9]+)\s*$', text)
+            if not match:
+                print("::error::Could not find a Stable tag line in readme.txt.")
+                sys.exit(1)
+            found = match.group(1)
+            if found != version:
+                print(f"::error::Stable tag in readme.txt is '{found}', expected '{version}'.")
+                sys.exit(1)
+            PY
+
+        - name: Prepare WordPress.org assets # Copy assets/ into .wordpress-org/ so the deploy action can publish them
+          run: |
+            set -euo pipefail
+            if [[ -d "assets" ]]; then
+              rm -rf .wordpress-org
+              mkdir .wordpress-org
+              cp -R assets/. .wordpress-org/
+              echo "Copied assets/ to .wordpress-org/."
+            else
+              echo "No assets directory found; skipping asset preparation."
+            fi
+
+        - name: Deploy to WordPress.org # Run the official deploy action with the extracted version
+          id: deploy
+          uses: 10up/action-wordpress-plugin-deploy@v2
+          env:
+            SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+            SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+            SLUG: consent-mode-banner-cmp-free-toolz
+            VERSION: ${{ steps.vars.outputs.version }}
+          with:
+            generate-zip: true
+
+        - name: Upload release ZIP artifact # Publish the generated ZIP for reference
+          uses: actions/upload-artifact@v4
+          with:
+            name: consent-mode-banner-cmp-free-toolz-${{ steps.vars.outputs.version }}.zip
+            path: ${{ steps.deploy.outputs.zip-path }}
+            if-no-files-found: error
