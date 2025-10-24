@@ -20,7 +20,7 @@
 
 ## How to Configure and Activate the Banner
 
-1. Generate your Banner ID at: [https://consentmode.toolz.at/en/generator](https://consentmode.toolz.at/en/generator)
+1. Generate your Banner ID at: [Generate Banner (Toolz.at)](https://consentmode.toolz.at/en/generator)
 2. In WordPress, go to **Settings > Consent Mode Banner CMP - Toolz**.
 3. Check the **Enable Banner** option to activate the banner display.
 4. In the **Banner ID** field, paste the ID generated on the Toolz site.
