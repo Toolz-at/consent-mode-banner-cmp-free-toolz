@@ -20,6 +20,14 @@ define( 'TOOLZCMPFT_OPTION_KEY', 'toolzcmpft_banner_id' );
 define( 'TOOLZCMPFT_ENABLE_KEY', 'toolzcmpft_banner_enable' );
 define( 'TOOLZCMPFT_SCRIPT_SRC', 'https://cdn.toolz.at/banner-cmp.js' );
 
+add_action( 'init', function () {
+    load_plugin_textdomain(
+        'consent-mode-banner-cmp-free-toolz',
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages'
+    );
+} );
+
 class ToolzCMPFT_Plugin {
     public function __construct() {
         add_action( 'admin_menu', [ $this, 'add_settings_page' ] );
@@ -70,7 +78,10 @@ class ToolzCMPFT_Plugin {
 
         add_settings_field(
             TOOLZCMPFT_OPTION_KEY,
-            __( 'Banner ID', 'consent-mode-banner-cmp-free-toolz' ) . ' <span style="color:red">*</span>',
+            sprintf(
+                '%s <span style="color:red">*</span>',
+                esc_html__( 'Banner ID', 'consent-mode-banner-cmp-free-toolz' )
+            ),
             [ $this, 'field_id' ],
             'consent-mode-banner-cmp-free-toolz',
             'toolzcmpft_section'
@@ -102,10 +113,20 @@ class ToolzCMPFT_Plugin {
     $value = get_option( TOOLZCMPFT_OPTION_KEY, '' );
     echo '<input type="text" id="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" name="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" value="' . esc_attr( $value ) . '" maxlength="64" pattern="[A-Za-z0-9_-]{3,64}" class="regular-text" required /> ';
         echo '<br /><small>';
-        printf(
-            /* translators: %s: Toolz Banner CMP site URL */
-            esc_html__( 'Get your Banner ID at %s', 'consent-mode-banner-cmp-free-toolz' ),
-            '<a href="https://consentmode.toolz.at/en/generator" target="_blank" rel="noopener noreferrer">Consent Mode</a>'
+        $generator_link = '<a href="' . esc_url( 'https://consentmode.toolz.at/en/generator' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Consent Mode', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
+        echo wp_kses(
+            sprintf(
+                /* translators: %s: Toolz Banner CMP generator link */
+                __( 'Get your Banner ID at %s', 'consent-mode-banner-cmp-free-toolz' ),
+                $generator_link
+            ),
+            [
+                'a' => [
+                    'href'   => [],
+                    'target' => [],
+                    'rel'    => [],
+                ],
+            ]
         );
         echo '</small>';
     }
