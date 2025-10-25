@@ -97,7 +97,8 @@ GPLv2 or later. See LICENSE file.
 
 ## Changelog
 
-- 1.0.3 – Atualização do repositório GitHub
+- 1.0.4 – Documentation updates
+- 1.0.3 – GitHub repository update
 - 1.0.2 – Minor text updates
 - 1.0.1 – Bug fixes and minor improvements
 - 1.0.0 – Initial release

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Consent Mode Banner CMP - Toolz 1.0.3\n"
+"Project-Id-Version: Consent Mode Banner CMP - Toolz 1.0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 02:49+0000\n"
 "PO-Revision-Date: 2025-10-24 02:49+0000\n"
