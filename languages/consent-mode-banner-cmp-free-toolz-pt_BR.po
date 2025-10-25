@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Consent Mode Banner CMP - Toolz 1.0.5\n"
+"Project-Id-Version: Consent Mode Banner CMP - Toolz 1.0.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 02:49+0000\n"
 "PO-Revision-Date: 2025-10-24 02:49+0000\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Codex CLI\n"
-"X-Domain: consent-mode-banner-cmp-free-toolz-i18n\n"
+"X-Domain: consent-mode-banner-cmp-free-toolz\n"
 
 #: consent-mode-banner-cmp-toolz.php:43 consent-mode-banner-cmp-toolz.php:44
 msgid "Consent Mode Banner CMP - Toolz"
