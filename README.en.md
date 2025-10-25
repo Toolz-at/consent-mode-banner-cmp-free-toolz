@@ -67,6 +67,7 @@ GPLv2 or later. See LICENSE file.
 
 ## Changelog
 
+- 1.0.5 – Internationalization fixes and translation refresh
 - 1.0.4 – Documentation updates
 - 1.0.3 – GitHub repository update
 - 1.0.2 – Minor text updates

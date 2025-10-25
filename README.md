@@ -97,6 +97,7 @@ GPLv2 or later. See LICENSE file.
 
 ## Changelog
 
+- 1.0.5 – Correções de internacionalização e atualização das traduções
 - 1.0.4 – Documentation updates
 - 1.0.3 – GitHub repository update
 - 1.0.2 – Minor text updates
