@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Consent Mode Banner CMP - Toolz
  * Description: Consent Mode Banner for GDPR, CCPA, LGPD with conditional cookie notice and customizable cookie policy.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Toolz
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: consent-mode-banner-cmp-free-toolz-i18n
+ * Text Domain: consent-mode-banner-cmp-free-toolz
  * Domain Path: /languages
  * Requires at least: 5.0
  * Tested up to: 6.8
@@ -15,7 +15,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'TOOLZCMPFT_VERSION', '1.0.5' );
+define( 'TOOLZCMPFT_VERSION', '1.0.6' );
 define( 'TOOLZCMPFT_OPTION_KEY', 'toolzcmpft_banner_id' );
 define( 'TOOLZCMPFT_ENABLE_KEY', 'toolzcmpft_banner_enable' );
 define( 'TOOLZCMPFT_SCRIPT_SRC', 'https://cdn.toolz.at/banner-cmp.js' );
@@ -32,8 +32,8 @@ class ToolzCMPFT_Plugin {
 
     public function add_settings_page() {
         add_options_page(
-            __( 'Consent Mode Banner CMP - Toolz', 'consent-mode-banner-cmp-free-toolz-i18n' ),
-            __( 'Consent Mode Banner CMP - Toolz', 'consent-mode-banner-cmp-free-toolz-i18n' ),
+            __( 'Consent Mode Banner CMP - Toolz', 'consent-mode-banner-cmp-free-toolz' ),
+            __( 'Consent Mode Banner CMP - Toolz', 'consent-mode-banner-cmp-free-toolz' ),
             'manage_options',
             'consent-mode-banner-cmp-free-toolz',
             [ $this, 'settings_page_html' ]
@@ -55,14 +55,14 @@ class ToolzCMPFT_Plugin {
 
         add_settings_section(
             'toolzcmpft_section',
-            __( 'Banner CMP Settings', 'consent-mode-banner-cmp-free-toolz-i18n' ),
+            __( 'Banner CMP Settings', 'consent-mode-banner-cmp-free-toolz' ),
             '__return_false',
             'consent-mode-banner-cmp-free-toolz'
         );
 
         add_settings_field(
             TOOLZCMPFT_ENABLE_KEY,
-            __( 'Enable Banner', 'consent-mode-banner-cmp-free-toolz-i18n' ),
+            __( 'Enable Banner', 'consent-mode-banner-cmp-free-toolz' ),
             [ $this, 'field_enable' ],
             'consent-mode-banner-cmp-free-toolz',
             'toolzcmpft_section'
@@ -72,7 +72,7 @@ class ToolzCMPFT_Plugin {
             TOOLZCMPFT_OPTION_KEY,
             sprintf(
                 '%s <span style="color:red">*</span>',
-                esc_html__( 'Banner ID', 'consent-mode-banner-cmp-free-toolz-i18n' )
+                esc_html__( 'Banner ID', 'consent-mode-banner-cmp-free-toolz' )
             ),
             [ $this, 'field_id' ],
             'consent-mode-banner-cmp-free-toolz',
@@ -91,25 +91,25 @@ class ToolzCMPFT_Plugin {
             return $value;
         }
     $old = get_option( TOOLZCMPFT_OPTION_KEY, '' );
-    add_settings_error( TOOLZCMPFT_OPTION_KEY, 'invalid_id', __( 'Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore.', 'consent-mode-banner-cmp-free-toolz-i18n' ) );
+    add_settings_error( TOOLZCMPFT_OPTION_KEY, 'invalid_id', __( 'Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore.', 'consent-mode-banner-cmp-free-toolz' ) );
         return $old;
     }
 
     public function field_enable() {
     $value = (int) get_option( TOOLZCMPFT_ENABLE_KEY, 0 );
     echo '<label><input type="checkbox" id="' . esc_attr( TOOLZCMPFT_ENABLE_KEY ) . '" name="' . esc_attr( TOOLZCMPFT_ENABLE_KEY ) . '" value="1" ' . checked( 1, $value, false ) . ' /> ';
-    echo esc_html__( 'After enabling the banner it will start to be displayed', 'consent-mode-banner-cmp-free-toolz-i18n' ) . '</label>';
+    echo esc_html__( 'After enabling the banner it will start to be displayed', 'consent-mode-banner-cmp-free-toolz' ) . '</label>';
     }
 
     public function field_id() {
     $value = get_option( TOOLZCMPFT_OPTION_KEY, '' );
     echo '<input type="text" id="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" name="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" value="' . esc_attr( $value ) . '" maxlength="64" pattern="[A-Za-z0-9_-]{3,64}" class="regular-text" required /> ';
         echo '<br /><small>';
-        $generator_link = '<a href="' . esc_url( 'https://consentmode.toolz.at/en/generator' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Consent Mode', 'consent-mode-banner-cmp-free-toolz-i18n' ) . '</a>';
+        $generator_link = '<a href="' . esc_url( 'https://consentmode.toolz.at/en/generator' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Consent Mode', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
         echo wp_kses(
             sprintf(
                 /* translators: %s: Toolz Banner CMP generator link */
-                __( 'Get your Banner ID at %s', 'consent-mode-banner-cmp-free-toolz-i18n' ),
+                __( 'Get your Banner ID at %s', 'consent-mode-banner-cmp-free-toolz' ),
                 $generator_link
             ),
             [
@@ -126,7 +126,7 @@ class ToolzCMPFT_Plugin {
     public function settings_page_html() {
         if ( ! current_user_can( 'manage_options' ) ) return;
         echo '<div class="wrap">';
-    echo '<h1>' . esc_html__( 'Consent (Toolz Banner CMP)', 'consent-mode-banner-cmp-free-toolz-i18n' ) . '</h1>';
+    echo '<h1>' . esc_html__( 'Consent (Toolz Banner CMP)', 'consent-mode-banner-cmp-free-toolz' ) . '</h1>';
         echo '<form method="post" action="options.php">';
     settings_fields( 'toolzcmpft_settings' );
     do_settings_sections( 'consent-mode-banner-cmp-free-toolz' );
@@ -156,7 +156,7 @@ class ToolzCMPFT_Plugin {
 
     public function settings_link( $links ) {
     $url = admin_url( 'options-general.php?page=consent-mode-banner-cmp-free-toolz' );
-    $links[] = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-mode-banner-cmp-free-toolz-i18n' ) . '</a>';
+    $links[] = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
         return $links;
     }
 
@@ -166,7 +166,7 @@ class ToolzCMPFT_Plugin {
         $banner_id = (string) get_option( TOOLZCMPFT_OPTION_KEY, '' );
 
         if ( $enabled && ! preg_match( '/^[A-Za-z0-9_-]{3,64}$/', $banner_id ) ) {
-            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Consent: Banner is enabled, but the Banner ID is missing or invalid.', 'consent-mode-banner-cmp-free-toolz-i18n' ) . '</p></div>';
+            echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Consent: Banner is enabled, but the Banner ID is missing or invalid.', 'consent-mode-banner-cmp-free-toolz' ) . '</p></div>';
         }
     }
 }

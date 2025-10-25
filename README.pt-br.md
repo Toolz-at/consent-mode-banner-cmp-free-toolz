@@ -68,6 +68,7 @@ GPLv2 ou posterior. Veja o arquivo LICENSE.
 
 ## Changelog
 
+- 1.0.6 – Pequenas correções e atualização das traduções
 - 1.0.5 – Correções de internacionalização e atualização das traduções
 - 1.0.4 – Atualizações de documentação
 - 1.0.3 – Atualização do repositório GitHub
