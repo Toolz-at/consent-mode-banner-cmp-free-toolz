@@ -4,7 +4,7 @@ Tags: consent mode, cmp, banner, cookie, compliance
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Easily display the Toolz CMP banner in your site footer using a unique ID. GDPR,
 Easily make your WordPress site compliant with privacy laws (GDPR, LGPD, CCPA) by enabling the Toolz CMP consent banner in your footer. No public links, no branding, no tracking, and 100% privacy-first.
 
 **How it works:**
-- The admin generates a Banner ID at: https://consentmode.toolz.at/en/generator
+- The admin generates a Banner ID at: [Generate Banner (Toolz.at)](https://consentmode.toolz.at/en/generator)
 - The plugin only enables the banner if you activate it and provide a valid ID.
 - No data is collected, no external branding, and no public links are added.
 
@@ -77,8 +77,11 @@ Service provider: Toolz.at
 2. Example of the consent banner in the site footer.
 
 == Changelog ==
+= 1.0.4 =
+* Documentation updates.
+
 = 1.0.3 =
-* Atualização do repositório GitHub.
+* GitHub repository update.
 
 = 1.0.2 =
 * Minor text updates.

@@ -21,9 +21,9 @@
 
 ## Como configurar e ativar o banner
 
-1. Gere seu Banner ID em: [https://consentmode.toolz.at/en/generator](https://consentmode.toolz.at/en/generator)
+1. Gere seu Banner ID em: [Gerar Banner (Toolz.at)](https://consentmode.toolz.at/en/generator)
 2. No WordPress, acesse **Configurações > Consent Mode Banner CMP - Toolz**.
-3. Marque a opção **Enable Banner** para ativar a exibição do banner.
+3. Marque a opção **Ativar Banner** para ativar a exibição do banner.
 4. No campo **Banner ID**, cole o ID gerado no site da Toolz.
 5. Clique em **Salvar alterações**.
 6. Pronto! O banner será exibido no rodapé do seu site.
@@ -68,6 +68,7 @@ GPLv2 ou posterior. Veja o arquivo LICENSE.
 
 ## Changelog
 
+- 1.0.4 – Atualizações de documentação
 - 1.0.3 – Atualização do repositório GitHub
 - 1.0.2 – Atualizações menores de texto
 - 1.0.1 – Correções de bugs e melhorias menores

@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Consent Mode Banner CMP - Toolz 1.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-24 02:49+0000\n"
+"PO-Revision-Date: 2025-10-24 02:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Codex CLI\n"
+"X-Domain: consent-mode-banner-cmp-free-toolz-i18n\n"
+
+#: consent-mode-banner-cmp-toolz.php:43 consent-mode-banner-cmp-toolz.php:44
+msgid "Consent Mode Banner CMP - Toolz"
+msgstr "Consent Mode Banner CMP - Toolz"
+
+#: consent-mode-banner-cmp-toolz.php:66
+msgid "Banner CMP Settings"
+msgstr "Configurações do Banner CMP"
+
+#: consent-mode-banner-cmp-toolz.php:73
+msgid "Enable Banner"
+msgstr "Ativar banner"
+
+#: consent-mode-banner-cmp-toolz.php:83
+msgid "Banner ID"
+msgstr "ID do banner"
+
+#: consent-mode-banner-cmp-toolz.php:102
+msgid "Invalid Banner ID. Use 3-64 letters, numbers, dash or underscore."
+msgstr "ID do banner inválido. Use de 3 a 64 letras, números, hífen ou sublinhado."
+
+#: consent-mode-banner-cmp-toolz.php:109
+msgid "After enabling the banner it will start to be displayed"
+msgstr "Após ativar o banner ele passará a ser exibido"
+
+#: consent-mode-banner-cmp-toolz.php:116
+msgid "Consent Mode"
+msgstr "Consent Mode"
+
+#. translators: %s: Toolz Banner CMP generator link
+#: consent-mode-banner-cmp-toolz.php:119
+msgid "Get your Banner ID at %s"
+msgstr "Obtenha seu ID do banner em %s"
+
+#: consent-mode-banner-cmp-toolz.php:137
+msgid "Consent (Toolz Banner CMP)"
+msgstr "Consent (Toolz Banner CMP)"
+
+#: consent-mode-banner-cmp-toolz.php:167
+msgid "Settings"
+msgstr "Configurações"
+
+#: consent-mode-banner-cmp-toolz.php:177
+msgid "Consent: Banner is enabled, but the Banner ID is missing or invalid."
+msgstr "Consent: o banner está ativado, mas o ID do banner está ausente ou inválido."
