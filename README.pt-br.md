@@ -1,7 +1,7 @@
 
 # Consent Mode Banner CMP - Toolz
 
-[Gerador de Banner Toolz CMP](https://consentmode.toolz.at/en/generator) – Gere seu banner personalizado gratuitamente.
+[Gerador de Banner Toolz CMP](https://consentmodebanner.com/en/generator) – Gere seu banner personalizado gratuitamente.
 
 ## Como instalar o plugin
 
@@ -21,7 +21,7 @@
 
 ## Como configurar e ativar o banner
 
-1. Gere seu Banner ID em: [Gerar Banner (Toolz.at)](https://consentmode.toolz.at/en/generator)
+1. Gere seu Banner ID em: [Gerar Banner (Toolz.at)](https://consentmodebanner.com/en/generator)
 2. No WordPress, acesse **Configurações > Consent Mode Banner CMP - Toolz**.
 3. Marque a opção **Ativar Banner** para ativar a exibição do banner.
 4. No campo **Banner ID**, cole o ID gerado no site da Toolz.

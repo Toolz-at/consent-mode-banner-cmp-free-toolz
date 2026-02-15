@@ -23,7 +23,7 @@
 
 ## Quick Start (2 minutes)
 
-1. **[Generate your Banner ID](https://consentmode.toolz.at/en/generator)** (free, no registration).
+1. **[Generate your Banner ID](https://consentmodebanner.com/en/generator)** (free, no registration).
 2. **Install the plugin:**
 	 - Download from [GitHub](https://github.com/Toolz-at/consent-mode-banner-cmp-toolz) (Code > Download ZIP).
 	 - In WordPress, go to **Plugins > Add New > Upload Plugin** and select the ZIP.
