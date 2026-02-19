@@ -1,6 +1,6 @@
 # Consent Mode Banner CMP - Toolz
 
-[Toolz CMP Banner Generator](https://consentmode.toolz.at/en/generator) – Generate your personalized banner.
+[Toolz CMP Banner Generator](https://consentmodebanner.com/en/generator) – Generate your personalized banner.
 
 ## How to Install the Plugin
 
@@ -20,7 +20,7 @@
 
 ## How to Configure and Activate the Banner
 
-1. Generate your Banner ID at: [Generate Banner (Toolz.at)](https://consentmode.toolz.at/en/generator)
+1. Generate your Banner ID at: [Generate Banner (Toolz.at)](https://consentmodebanner.com/en/generator)
 2. In WordPress, go to **Settings > Consent Mode Banner CMP - Toolz**.
 3. Check the **Enable Banner** option to activate the banner display.
 4. In the **Banner ID** field, paste the ID generated on the Toolz site.
@@ -33,7 +33,7 @@
 
 ## Overview
 
-Consent Mode Banner CMP - Toolz is a lightweight WordPress plugin for cookie compliance and privacy. It injects the [Toolz CMP banner script](https://cdn.toolz.at/banner-cmp.js) in the footer using a unique Banner ID, only when enabled by the admin. No public links, no branding, no tracking—just safe, opt-in integration for consent mode, LGPD/GDPR, and privacy compliance.
+Consent Mode Banner CMP - Toolz is a lightweight WordPress plugin for cookie compliance and privacy. It injects the [Toolz CMP banner script](https://cdn.consentmodebanner.com/banner-cmp.js) in the footer using a unique Banner ID, only when enabled by the admin. No public links, no branding, no tracking—just safe, opt-in integration for consent mode, LGPD/GDPR, and privacy compliance.
 
 ## Features
 

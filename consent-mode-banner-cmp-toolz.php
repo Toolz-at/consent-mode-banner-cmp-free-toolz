@@ -105,7 +105,7 @@ class ToolzCMPFT_Plugin {
     $value = get_option( TOOLZCMPFT_OPTION_KEY, '' );
     echo '<input type="text" id="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" name="' . esc_attr( TOOLZCMPFT_OPTION_KEY ) . '" value="' . esc_attr( $value ) . '" maxlength="64" pattern="[A-Za-z0-9_-]{3,64}" class="regular-text" required /> ';
         echo '<br /><small>';
-        $generator_link = '<a href="' . esc_url( 'https://consentmode.toolz.at/en/generator' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Consent Mode', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
+        $generator_link = '<a href="' . esc_url( 'https://consentmodebanner.com/en/generator' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Consent Mode', 'consent-mode-banner-cmp-free-toolz' ) . '</a>';
         echo wp_kses(
             sprintf(
                 /* translators: %s: Toolz Banner CMP generator link */
